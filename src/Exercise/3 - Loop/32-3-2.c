@@ -2,6 +2,7 @@
 
 int main() {
 	int i, x, min, max;
+	printf("Enter the numbers that you want to find the min and max: \n");
 
 	for (i = 0; i < 10; i++) {
 		scanf("%d", &x);
@@ -16,6 +17,6 @@ int main() {
 		}
 	}
 
-	printf("Min = %d\nMax = %d", min, max);
+	printf("The minimum value is %d.\nAnd the maximum value is %d.", min, max);
 	return 0;
 }
