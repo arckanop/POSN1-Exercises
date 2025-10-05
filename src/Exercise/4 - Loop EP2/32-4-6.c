@@ -10,7 +10,7 @@ int main() {
 			for (j = 0; j <= i; j++) {
 				if (j == 0) c = j;
 				if (c >= 26) c -= 26;
-				printf("%c ", c + 65);
+				printf("%c", c + 65);
 				c++;
 			}
 			printf("\n");

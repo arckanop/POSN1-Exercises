@@ -20,6 +20,6 @@ int main() {
 		}
 	}
 
-	printf("There are %d prime numbers that are less than %d.", count, num);
+	printf("There are %d prime numbers that are less than or equal to %d.", count, num);
 	return 0;
 }

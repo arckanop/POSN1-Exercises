@@ -17,6 +17,9 @@ int main() {
 				if (x > max) max = x;
 			}
 			sum += x;
+		} else {
+			printf("Invalid input");
+			return 0;
 		}
 	}
 
