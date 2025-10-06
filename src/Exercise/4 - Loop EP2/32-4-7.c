@@ -9,6 +9,7 @@ int main() {
 		for (j = 1; j <= n - i - 1; j++) {
 			printf(" ");
 		}
+
 		for (j = -i; j <= i; j++) {
 			if (j < 0) {
 				printf("%d", -j);
