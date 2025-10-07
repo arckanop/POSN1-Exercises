@@ -4,7 +4,7 @@
 
 int main() {
 	char text[505];
-	gets(text);
+	scanf("%[^\n]", text);
 
 	int i, count = 0;
 	for (i = 0; text[i] != '\0'; i++) {
