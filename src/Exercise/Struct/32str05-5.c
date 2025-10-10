@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 struct date {
 	int day;
@@ -16,6 +17,7 @@ struct student {
 
 int main() {
 	int i, targetBirthMonth, found = 0;
+
 	struct student youngest;
 	struct student record[5] = {
 		{10001, "Chris Hemsworth", {11, 12, 2552}, {3, 5, 2560}, 4},
@@ -35,18 +37,34 @@ int main() {
 			   );
 	}
 
-	printf("\nID\tName\t\t\tBirth(dd/mm/yyyy)\tAge (From 01/10/2568)\n");
+	printf("\nID\tName\t\t\t\tAge (From 01/10/2568)\n");
+
+	struct tm ref = {0};
+	ref.tm_mday = 1;
+	ref.tm_mon = 10 - 1;
+	ref.tm_year = 2568 - 543 - 1900;
 
 	for (i = 0; i < 5; i++) {
-		int age = 2568 - record[i].birth.year;
+		struct tm birth = {0};
+		birth.tm_mday = record[i].birth.day;
+		birth.tm_mon = record[i].birth.month - 1;
+		birth.tm_year = record[i].birth.year - 543 - 1900;
 
-		if (10 < record[i].birth.month || (10 == record[i].birth.month && 1 < record[i].birth.day)) age--;
+		time_t timeRef = mktime(&ref);
+		time_t timeBirth = mktime(&birth);
 
-		printf("%-5d %-20s %02d/%02d/%04d\t\t%d\n",
+		double difference = difftime(timeRef, timeBirth);
+
+		int days = difference / (60 * 60 * 24);
+
+		int years = days / 365;
+		int months = (days % 365) / 30;
+		days = (days % 365) % 30;
+
+		printf("%-5d %-20s %02d Years %02d Months %02d Days\t\n",
 			   record[i].id,
 			   record[i].name,
-			   record[i].birth.day, record[i].birth.month, record[i].birth.year,
-			   age
+			   years, months, days
 			   );
 	}
 
