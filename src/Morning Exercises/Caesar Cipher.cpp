@@ -21,7 +21,6 @@ int main() {
 
 			if (str[i] < 'a') str[i] += 26;
 		}
-
 	}
 
 	for (i = 0; i < len; i++) {
