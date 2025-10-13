@@ -1,3 +1,14 @@
-//
-// Created by Kanop Sutharomna on 13/10/2025.
-//
+#include <iostream>
+#include <map>
+#include <string>
+// #include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+
+
+	return 0;
+}
